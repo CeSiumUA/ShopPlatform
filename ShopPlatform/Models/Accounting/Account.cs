@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ShopPlatform.Models.Account
+namespace ShopPlatform.Models.Accounting
 {
-    public class User
+    public class Account
     {
+        [Key]
+        public int Id { get; set; }
         public string VendorName
         {
             get

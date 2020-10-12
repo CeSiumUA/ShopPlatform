@@ -8,9 +8,11 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using ShopPlatform.Models;
 
 namespace ShopPlatform
 {
@@ -20,21 +22,23 @@ namespace ShopPlatform
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSpaStaticFiles(configuration =>
-            {
-                configuration.RootPath = "ClientApp/dist/ClientApp";
-            });
+            services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(Properties.Resources.DatabaseConnectionString));
+            //services.AddSpaStaticFiles(configuration =>
+            //{
+            //    configuration.RootPath = "ClientApp/dist/ClientApp";
+            //});
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
                 options.RequireHttpsMetadata = true;
                 options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters()
                 {
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("d516e60b120f47339b12fde5a01fbec3")),
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Properties.Resources.TokenSecurityKey)),
                     ValidateLifetime = true,
-                    ValidateIssuer = false,
-                    ValidateActor = false,
+                    ValidateIssuer = true,
+                    ValidIssuer = Properties.Resources.TokenIssuer,
                     ValidateIssuerSigningKey = true,
-                    ValidateAudience = false
+                    ValidateAudience = true,
+                    ValidAudience = Properties.Resources.TokenAudience
                 };
             });
             services.AddAuthorization(options =>
