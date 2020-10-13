@@ -1,13 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="8251a03b-756a-43d6-ac9c-1fbeaa8b2e71" name="Default Changelist" comment="" />
+    <list default="true" id="8251a03b-756a-43d6-ac9c-1fbeaa8b2e71" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/authentication/authentication.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/authentication/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.vs/ShopPlatform/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vs/ShopPlatform/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.vs/ShopPlatform/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vs/ShopPlatform/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/Controllers/Authentication.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../API/Controllers/Authentication.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Models/Accounting/Password.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Models/Accounting/Password.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Models/Accounting/TokensChain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Models/Accounting/TokensChain.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Models/DatabaseContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Models/DatabaseContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ShopPlatform.csproj.user" beforeDir="false" afterPath="$PROJECT_DIR$/../ShopPlatform.csproj.user" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
   <component name="ProjectId" id="1idZ4Lj7tnnpgMNkcxZQWhXp9rP" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -80,29 +125,41 @@
       <option name="presentableId" value="Default" />
       <updated>1602239237169</updated>
       <workItem from="1602239238197" duration="441000" />
-      <workItem from="1602498734168" duration="8067000" />
+      <workItem from="1602498734168" duration="8665000" />
+      <workItem from="1602591825274" duration="4552000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
-    <state width="2517" height="295" key="GridCell.Tab.0.bottom" timestamp="1602504878170">
+    <state width="2517" height="295" key="GridCell.Tab.0.bottom" timestamp="1602611072732">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="295" key="GridCell.Tab.0.bottom/0.0.2560.1080/-1920.0.1920.1080@0.0.2560.1080" timestamp="1602504878170" />
-    <state width="2517" height="295" key="GridCell.Tab.0.center" timestamp="1602504878170">
+    <state width="2517" height="295" key="GridCell.Tab.0.bottom/0.0.2560.1080/-1920.0.1920.1080@0.0.2560.1080" timestamp="1602611072732" />
+    <state width="2517" height="295" key="GridCell.Tab.0.center" timestamp="1602611072731">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="295" key="GridCell.Tab.0.center/0.0.2560.1080/-1920.0.1920.1080@0.0.2560.1080" timestamp="1602504878170" />
-    <state width="2517" height="295" key="GridCell.Tab.0.left" timestamp="1602504878170">
+    <state width="2517" height="295" key="GridCell.Tab.0.center/0.0.2560.1080/-1920.0.1920.1080@0.0.2560.1080" timestamp="1602611072731" />
+    <state width="2517" height="295" key="GridCell.Tab.0.left" timestamp="1602611072730">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="295" key="GridCell.Tab.0.left/0.0.2560.1080/-1920.0.1920.1080@0.0.2560.1080" timestamp="1602504878170" />
-    <state width="2517" height="295" key="GridCell.Tab.0.right" timestamp="1602504878170">
+    <state width="2517" height="295" key="GridCell.Tab.0.left/0.0.2560.1080/-1920.0.1920.1080@0.0.2560.1080" timestamp="1602611072730" />
+    <state width="2517" height="295" key="GridCell.Tab.0.right" timestamp="1602611072731">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="295" key="GridCell.Tab.0.right/0.0.2560.1080/-1920.0.1920.1080@0.0.2560.1080" timestamp="1602504878170" />
+    <state width="2517" height="295" key="GridCell.Tab.0.right/0.0.2560.1080/-1920.0.1920.1080@0.0.2560.1080" timestamp="1602611072731" />
   </component>
 </project>

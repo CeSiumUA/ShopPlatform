@@ -6,6 +6,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using ShopPlatform.Models;
 using ShopPlatform.Models.Accounting;
@@ -22,11 +23,30 @@ namespace ShopPlatform.API.Controllers
             this._DataBaseContext = databaseContext;
         }
 
+        [HttpPost("api/authentication/login")]
+        public async Task<IActionResult> Login([FromBody] LoginCredentials loginCredentials)
+        {
+            var account = await _DataBaseContext.Passwords.Include(x => x.Account)
+                .SingleOrDefaultAsync(x => x.Account.Email == loginCredentials.Email);
+            if (account.ComparePassword(loginCredentials.Password))
+            {
+                var tokenPair = account.Account.RetreiveToken();
+                var tokenResult = new
+                {
+                    User = account.Account,
+                    AccessToken = tokenPair.AccessToken,
+                    RefreshToken = tokenPair.RefreshToken
+                };
+                return new JsonResult(tokenResult);
+            }
+            return NotFound();
+        }
         [HttpPost("api/authentication/register")]
         public async Task<IActionResult> Register([FromBody]RegisterAccount registerAccount)
         {
             Password password = registerAccount.CreatePassword(registerAccount.Password);
-            var res = await _DataBaseContext.Passwords.AddAsync(password);
+            password = (await _DataBaseContext.Passwords.AddAsync(password)).Entity;
+            await _DataBaseContext.SaveChangesAsync();
             var tokenChain = password.Account.RetreiveToken();
             var jsonResult = new
             {

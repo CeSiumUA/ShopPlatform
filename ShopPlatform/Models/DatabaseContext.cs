@@ -11,9 +11,10 @@ namespace ShopPlatform.Models
     {
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Password> Passwords { get; set; }
+        public DbSet<TokensChain> TokenChains { get; set; }
         public DatabaseContext(DbContextOptions options) : base(options)
         {
-
+            Database.EnsureCreated();
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
