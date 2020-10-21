@@ -12,12 +12,10 @@ namespace ShopPlatform.Models.Accounting
     {
         [Key]
         public int Id { get; set; }
-        public Account Account { get; set; }
         public string PasswordHash { get; set; }
 
-        public Password(string password, Account account)
+        public Password(string password)
         {
-            this.Account = account;
             byte[] salt;
             new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
             var pbkdf2 = new Rfc2898DeriveBytes(password, salt, 100000);

@@ -3,14 +3,15 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --proxy-config proxy.config.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build-locale:en": "ng build --prod --i18n-locale en --i18n-format xlf --i18n-file src/locale/messages.en.xlf --output-path=dist/en --baseHref /en/",
     "build-locale:he": "ng build --prod --i18n-locale he --i18n-format xlf --i18n-file src/locale/messages.he.xlf --output-path=dist/he --baseHref /he/",
-    "build-locale": "npm run build-locale:en && npm run build-locale:he"
+    "build-prod": "ng build --prod --output-path=dist",
+    "build-locale": "npm run build-prod && npm run build-locale:en && npm run build-locale:he"
   },
   "private": true,
   "dependencies": {
@@ -19,9 +20,12 @@
     "@angular/compiler": "~10.1.0",
     "@angular/core": "~10.1.0",
     "@angular/forms": "~10.1.0",
+    "@angular/localize": "~10.1.0",
     "@angular/platform-browser": "~10.1.0",
     "@angular/platform-browser-dynamic": "~10.1.0",
     "@angular/router": "~10.1.0",
+    "@ng-bootstrap/ng-bootstrap": "^7.0.0",
+    "bootstrap": "^4.5.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

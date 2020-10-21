@@ -13,19 +13,33 @@ namespace ShopPlatform.Models.Accounting
         public int Id { get; set; }
         public string AccessToken { get; set; }
         public string RefreshToken { get; set; }
-        [JsonIgnore]
-        public Account Account { get; set; }
-
-        public TokensChain(Account account, string accessToken, string refreshToken)
+        public DateTime ExpirationDate { get; set; }
+        public TokensChain(string accessToken, string refreshToken, DateTime expirationDate)
         {
             this.AccessToken = accessToken;
             this.RefreshToken = refreshToken;
-            this.Account = account;
+            this.ExpirationDate = expirationDate;
         }
 
+        public void UpdateToken(string accessToken, string refreshToken, DateTime expirationDate)
+        {
+            this.AccessToken = accessToken;
+            this.RefreshToken = refreshToken;
+            this.ExpirationDate = expirationDate;
+        }
         public TokensChain()
         {
 
         }
+    }
+
+    public class TokenResult
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string AccessToken { get; set; }
+        public string RefreshToken { get; set; }
+        public string PhotoUrl { get; set; }
+        public Guid ProfileId { get; set; }
     }
 }

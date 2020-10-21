@@ -14,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using ShopPlatform.Models;
+using Newtonsoft.Json;
 
 namespace ShopPlatform
 {
@@ -29,10 +30,6 @@ namespace ShopPlatform
                 configuration.RootPath = "ClientApp/dist";
             });
             services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(Properties.Resources.DatabaseConnectionString));
-            //services.AddSpaStaticFiles(configuration =>
-            //{
-            //    configuration.RootPath = "ClientApp/dist/ClientApp";
-            //});
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
                 options.RequireHttpsMetadata = true;
@@ -53,7 +50,7 @@ namespace ShopPlatform
                 defaultPolicy = defaultPolicy.RequireAuthenticatedUser();
                 options.DefaultPolicy = defaultPolicy.Build();
             });
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
