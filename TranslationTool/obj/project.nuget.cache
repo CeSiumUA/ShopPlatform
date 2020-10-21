@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "IJ59rDNnB/ElvKfD1rnWu/An+RYuLH2ex37OR+aupe8zsN9rPs1CRozfNDRPt9WIi+E6IRTrJZbG6ytyB0J9rg==",
+  "success": true,
+  "projectFilePath": "F:\\FreelanceWork\\ShopPlatform\\TranslationTool\\TranslationTool.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mtgin\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

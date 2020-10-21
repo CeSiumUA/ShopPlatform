@@ -1,0 +1,16 @@
+F:\FreelanceWork\ShopPlatform\TranslationTool\bin\Debug\netcoreapp3.1\TranslationTool.exe
+F:\FreelanceWork\ShopPlatform\TranslationTool\bin\Debug\netcoreapp3.1\TranslationTool.deps.json
+F:\FreelanceWork\ShopPlatform\TranslationTool\bin\Debug\netcoreapp3.1\TranslationTool.runtimeconfig.json
+F:\FreelanceWork\ShopPlatform\TranslationTool\bin\Debug\netcoreapp3.1\TranslationTool.runtimeconfig.dev.json
+F:\FreelanceWork\ShopPlatform\TranslationTool\bin\Debug\netcoreapp3.1\TranslationTool.dll
+F:\FreelanceWork\ShopPlatform\TranslationTool\bin\Debug\netcoreapp3.1\TranslationTool.pdb
+F:\FreelanceWork\ShopPlatform\TranslationTool\obj\Debug\netcoreapp3.1\TranslationTool.csprojAssemblyReference.cache
+F:\FreelanceWork\ShopPlatform\TranslationTool\obj\Debug\netcoreapp3.1\TranslationTool.AssemblyInfoInputs.cache
+F:\FreelanceWork\ShopPlatform\TranslationTool\obj\Debug\netcoreapp3.1\TranslationTool.AssemblyInfo.cs
+F:\FreelanceWork\ShopPlatform\TranslationTool\obj\Debug\netcoreapp3.1\TranslationTool.dll
+F:\FreelanceWork\ShopPlatform\TranslationTool\obj\Debug\netcoreapp3.1\TranslationTool.pdb
+F:\FreelanceWork\ShopPlatform\TranslationTool\obj\Debug\netcoreapp3.1\TranslationTool.genruntimeconfig.cache
+F:\FreelanceWork\ShopPlatform\TranslationTool\bin\Debug\netcoreapp3.1\messages.he.xlf
+F:\FreelanceWork\ShopPlatform\TranslationTool\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+F:\FreelanceWork\ShopPlatform\TranslationTool\obj\Debug\netcoreapp3.1\TranslationTool.csproj.CoreCompileInputs.cache
+F:\FreelanceWork\ShopPlatform\TranslationTool\obj\Debug\netcoreapp3.1\TranslationTool.csproj.CopyComplete
