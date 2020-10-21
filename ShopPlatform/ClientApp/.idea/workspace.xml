@@ -20,41 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8251a03b-756a-43d6-ac9c-1fbeaa8b2e71" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/home.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Models/IIcon.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Models/Items/ItemIcon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.vs/ShopPlatform/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vs/ShopPlatform/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.vs/ShopPlatform/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../../.vs/ShopPlatform/v16/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ShopPlatform.sln" beforeDir="false" afterPath="$PROJECT_DIR$/../../ShopPlatform.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/Controllers/Authentication.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../API/Controllers/Authentication.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/shopmanagement/newitem.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/shopmanagement/shopsmanager.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API/Controllers/ShopController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../API/Controllers/ShopController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proxy.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/proxy.config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/authentication/auth.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/authentication/auth.guard.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/authentication/authentication.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/authentication/authentication.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/authentication/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/authentication/login/login.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/authentication/register/register.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/authentication/register/register.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/http/default.interceptor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/http/default.interceptor.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/http/interceptors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/http/interceptors.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/shopmanagement/newshop.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shopmanagement/newshop.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/shopmanagement/shop.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shopmanagement/shop.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/locale/messages.en.xlf" beforeDir="false" afterPath="$PROJECT_DIR$/src/locale/messages.en.xlf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/locale/messages.he.xlf" beforeDir="false" afterPath="$PROJECT_DIR$/src/locale/messages.he.xlf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FreelancerSkillsCreation.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Models/Accounting/Account.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Models/Accounting/Account.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Models/Accounting/Password.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Models/Accounting/Password.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Models/Accounting/RegisterAccount.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Models/Accounting/RegisterAccount.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Models/Accounting/TokensChain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Models/Accounting/TokensChain.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Models/DatabaseContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Models/DatabaseContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Properties/launchSettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ShopPlatform.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../ShopPlatform.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ShopPlatform.csproj.user" beforeDir="false" afterPath="$PROJECT_DIR$/../ShopPlatform.csproj.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Startup.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +132,7 @@
       <workItem from="1603097216085" duration="1198000" />
       <workItem from="1603184875996" duration="205000" />
       <workItem from="1603187945187" duration="14834000" />
-      <workItem from="1603254509703" duration="7728000" />
+      <workItem from="1603254509703" duration="15114000" />
     </task>
     <servers />
   </component>

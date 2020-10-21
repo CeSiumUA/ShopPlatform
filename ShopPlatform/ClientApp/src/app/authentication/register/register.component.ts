@@ -57,12 +57,7 @@ export class RegisterComponent implements OnInit{
 
   }
   public registerAccount(): void{
-    if (this.authService.register(this.account)){
-      this.router.navigateByUrl('/');
-    }
-    else{
-
-    }
+    this.authService.register(this.account);
   }
   ngOnInit(): void {
     this.account = new ShopAccount();

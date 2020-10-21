@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {ShopAccount} from './register/register.component';
+import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class AuthenticationService{
   set LoggedUser(value: SavedUser){
     localStorage.setItem('user', JSON.stringify(value));
   }
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient, private router: Router) {
   }
   public authenticate(email: string, password: string): Observable<any>{
     return this.httpClient.post(`/api/authentication/login`, JSON.stringify({Email: `${email}`, Password: `${password}`}));
@@ -22,18 +23,15 @@ export class AuthenticationService{
     localStorage.removeItem('user');
     window.location.reload();
   }
-  public register(user: any): boolean{
-    let result = false;
+  public register(user: any): void{
     this.httpClient.post('/api/authentication/register', JSON.stringify(user)).subscribe((data: any) => {
       if (data.error == null) {
         this.LoggedUser = data.payload;
-        result = true;
+        this.router.navigateByUrl('/');
       }
       else{
-        result = false;
       }
     });
-    return result;
   }
 }
 export class SavedUser{

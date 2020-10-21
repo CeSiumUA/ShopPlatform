@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {computeStartOfLinePositions} from '@angular/compiler-cli/src/ngtsc/sourcemaps/src/source_file';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Router} from '@angular/router';
 
 @Component({
@@ -49,6 +49,10 @@ import {Router} from '@angular/router';
           <div class="col-md-3 mb-3">
             <label for="zip" i18n="ZipCode|ZipCode label">Zip</label>
             <input type="text" class="form-control" [(ngModel)]="selectedZipCode" id="zip" placeholder="" required>
+          </div>
+          <div class="form-group col-md-3 mb-3">
+            <label for="exampleFormControlFile1" i18n="YourShopImage|Label for Your Shop Image">Your shop image</label>
+            <input #file type="file" class="form-control-file" id="exampleFormControlFile1" (change)="upload(file.files)">
           </div>
         </div>
         <button class="btn btn-primary btn-lg btn-block" i18n="RegisterShopButton|Label for register shop button" type="submit" (click)="registerShop()">Register shop</button>
@@ -309,6 +313,8 @@ export class NewshopComponent implements OnInit{
   public shopName: string;
   public shopDescription: string;
   public shopAddress: string;
+  public uploadedFileId: any;
+  private readyToPush = true;
   constructor(private httpClient: HttpClient, private router: Router) {
   }
   loadCities(event: any): void{
@@ -320,15 +326,27 @@ export class NewshopComponent implements OnInit{
         });
     }
   }
+  upload(file: any): void{
+    this.readyToPush = false;
+    const formData = new FormData();
+    formData.append('icon', file[0]);
+    this.httpClient.post('api/shop/uploadicon', formData).subscribe((data: any) => {
+      this.uploadedFileId = data.payload;
+      this.readyToPush = true;
+    });
+  }
   registerShop(): void{
+    while (!this.readyToPush){
+    }
     this.httpClient.post(`/api/shop/createshop`, {
       ShopName: `${this.shopName}`,
       ShopDescription: `${this.shopDescription}`,
       MainCategory: ``,
       Country: `${this.selectedCountry.name}`,
       City: `${this.selectedLocation}`,
-      ZipCode: `${this.selectedZipCode}`
-    }).subscribe((data: any) => {
+      ZipCode: `${this.selectedZipCode}`,
+      IconUrl: `${this.uploadedFileId}`
+    }, ).subscribe((data: any) => {
       if (data.payload === 'Succeed!'){
         this.router.navigateByUrl('/myshop');
       }

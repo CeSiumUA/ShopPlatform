@@ -14,6 +14,7 @@ import {AuthGuard} from './authentication/auth.guard';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {NewshopComponent} from './shopmanagement/newshop.component';
 import {HomeComponent} from './home.component';
+import {NewitemComponent} from './shopmanagement/newitem.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -31,7 +32,8 @@ const routes: Routes = [
     EnumToArrayPipe,
     ShopComponent,
     NewshopComponent,
-    HomeComponent
+    HomeComponent,
+    NewitemComponent
   ],
   imports: [
     BrowserModule,

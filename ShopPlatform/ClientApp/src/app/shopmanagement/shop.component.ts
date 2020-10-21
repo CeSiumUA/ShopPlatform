@@ -7,7 +7,7 @@ import {HttpClient} from '@angular/common/http';
   `<div *ngIf="shops?.length > 0">
       <h2 class="border-bottom border-gray pb-2 mb-0" i18n="ShopsListHeaderLabel|Label for shops list header">Your shops</h2>
       <div *ngFor="let shop of shops" class="card mb-3">
-        <img class="card-img-top" [src]="shop.iconUrl" alt="Shop icon" width="1576" height="180">
+        <img class="card-img-top" src="cdn/files/icons/{{shop.iconUrl}}" alt="Shop icon">
         <div class="card-body">
           <h5 class="card-title"><a routerLink="/shops/{{shop.id}}">{{shop.shopName}}</a></h5>
           <p class="card-text">{{shop.shopDescription}}</p>

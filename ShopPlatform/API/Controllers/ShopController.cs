@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ShopPlatform.Models;
+using ShopPlatform.Models.Items;
 using ShopPlatform.Models.Shop;
 
 namespace ShopPlatform.API.Controllers
@@ -17,14 +20,30 @@ namespace ShopPlatform.API.Controllers
     public class ShopController : ControllerBase
     {
         private DatabaseContext _DatabaseContext;
-        public ShopController(DatabaseContext databaseContext)
+        private IWebHostEnvironment hostingEnvironment;
+        public ShopController(DatabaseContext databaseContext, IWebHostEnvironment hostingEnvironment)
         {
+            this.hostingEnvironment = hostingEnvironment;
             this._DatabaseContext = databaseContext;
+        }
+
+        [HttpPost("uploadicon")]
+        public async Task<IActionResult> UploadFile()
+        {
+            string dir = Directory.CreateDirectory($"{hostingEnvironment.WebRootPath}/FilesUploads").FullName;
+            string iconName = Guid.NewGuid().ToString().Replace("-", string.Empty);
+            var file = Request.Form.Files[0];
+            using (FileStream fs = new FileStream($"{dir}/{iconName}", FileMode.Create))
+            {
+                await file.CopyToAsync(fs);
+            }
+            return new JsonResult(new ServerResponse<string>(iconName));
         }
         [HttpPost("createshop")]
         public async Task<IActionResult> CreateShop([FromBody]Shop newShop)
         {
-            if ((await _DatabaseContext.Shops.Include(x => x.ShopOwner).Where(x => x.ShopOwner.Email == User.Identity.Name).FirstOrDefaultAsync()) != null)
+            if ((await _DatabaseContext.Shops.Include(x => x.ShopOwner)
+                .Where(x => x.ShopOwner.Email == User.Identity.Name).FirstOrDefaultAsync()) != null)
             {
                 return new JsonResult(new ServerResponse<object>(new ServerError(ServerError.ShopsLimitExceeded)));
             }

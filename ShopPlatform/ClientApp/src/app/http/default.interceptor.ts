@@ -12,7 +12,7 @@ export class DefaultInterceptor implements HttpInterceptor{
     if (!req.url.includes('api/')){
       return next.handle(req);
     }
-    if (!req.headers.has('Content-Type')){
+    if (!req.headers.has('Content-Type') && !req.url.includes('api/shop/uploadicon')){
       req = req.clone({
         headers: req.headers.set('Content-Type', 'application/json')
       });
