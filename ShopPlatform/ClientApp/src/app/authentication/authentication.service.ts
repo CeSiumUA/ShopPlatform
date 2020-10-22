@@ -5,7 +5,7 @@ import {ShopAccount} from './register/register.component';
 import {Router} from '@angular/router';
 
 @Injectable({
-  providedIn: 'root'
+   providedIn: 'root'
 })
 export class AuthenticationService{
   get LoggedUser(): SavedUser{
@@ -15,6 +15,10 @@ export class AuthenticationService{
     localStorage.setItem('user', JSON.stringify(value));
   }
   constructor(private httpClient: HttpClient, private router: Router) {
+
+  }
+  private checkAuth(): void{
+    this.httpClient.get('api/authentication/check').pipe().subscribe()
   }
   public authenticate(email: string, password: string): Observable<any>{
     return this.httpClient.post(`/api/authentication/login`, JSON.stringify({Email: `${email}`, Password: `${password}`}));

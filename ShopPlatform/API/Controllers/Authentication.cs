@@ -46,6 +46,17 @@ namespace ShopPlatform.API.Controllers
         }
 
         [Authorize]
+        [HttpGet("api/authentication/check")]
+        public async Task<IActionResult> CheckAuth()
+        {
+            var user = await _DataBaseContext.Accounts.Where(x => x.Email == User.Identity.Name).FirstOrDefaultAsync();
+            if (user != null)
+            {
+                return new JsonResult(new ServerResponse<string>("Succeeded!"));
+            }
+            return Unauthorized();
+        }
+        [Authorize]
         [HttpPost("api/authentication/refreshtoken")]
         public async Task<IActionResult> RefreshToken()
         {

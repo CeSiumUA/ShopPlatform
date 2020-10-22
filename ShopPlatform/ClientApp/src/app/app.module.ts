@@ -16,6 +16,7 @@ import {NewshopComponent} from './shopmanagement/newshop.component';
 import {HomeComponent} from './home.component';
 import {NewitemComponent} from './shopmanagement/newitem.component';
 import {ShopselectorComponent} from "./shopmanagement/shopselector.component";
+import {AuthenticationService} from "./authentication/authentication.service";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},

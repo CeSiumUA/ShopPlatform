@@ -29,8 +29,8 @@ namespace ShopPlatform
             {
                 configuration.RootPath = "ClientApp/dist";
             });
-            //services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(Properties.Resources.MSSQL_DatabaseConnectionString));
-            services.AddDbContext<DatabaseContext>(options => options.UseSqlite(Properties.Resources.SQlite_DatabaseConnectionString));
+            services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(Properties.Resources.MSSQL_DatabaseConnectionString));
+            //services.AddDbContext<DatabaseContext>(options => options.UseSqlite(Properties.Resources.SQlite_DatabaseConnectionString));
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
                 options.RequireHttpsMetadata = true;

@@ -6,7 +6,7 @@ import {AuthenticationService} from '../authentication/authentication.service';
 
 @Injectable()
 export class DefaultInterceptor implements HttpInterceptor{
-  constructor(private injector: Injector, private authService: AuthenticationService) {
+  constructor(private injector: Injector) {
   }
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     if (!req.url.includes('api/')){
@@ -18,15 +18,21 @@ export class DefaultInterceptor implements HttpInterceptor{
       });
     }
     if (!req.headers.has('Authorization')){
-      const accessToken = this.authService.LoggedUser?.accessToken;
+      const accessToken = JSON.parse(localStorage.getItem('user'))?.accessToken;
       if (accessToken != null) {
         req = req.clone({
           headers: req.headers.set('Authorization', `Bearer ${accessToken}`)
         });
       }
     }
-    return next.handle(req).pipe(catchError((error: HttpErrorResponse) => {
-      return throwError(error);
-    }));
+    return next.handle(req).pipe(catchError((error: HttpErrorResponse) => this.ErrorHandler(error)));
+  }
+  private ErrorHandler(err: HttpErrorResponse): Observable<any>{
+    if(err.status === 401 || err.status === 403){
+      localStorage.removeItem('user');
+    }
+    else{
+    }
+    return throwError(err);
   }
 }
