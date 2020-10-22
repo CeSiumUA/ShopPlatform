@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="DatabaseConnectionString" xml:space="preserve">
+  <data name="MSSQL_DatabaseConnectionString" xml:space="preserve">
     <value>Server=localhost;Database=ShopDB;Trusted_Connection=True;</value>
   </data>
   <data name="TokenAudience" xml:space="preserve">
@@ -128,5 +128,8 @@
   </data>
   <data name="TokenSecurityKey" xml:space="preserve">
     <value>e"t(t7ALs)[Wiif&lt;VOY9NRm[c*v/4-4c26Sdy&lt;b/5}.=A_Vv-%&amp;IA3?$)q43Q4)</value>
+  </data>
+  <data name="SQlite_DatabaseConnectionString" xml:space="preserve">
+    <value>Data Source=shopdb.db;</value>
   </data>
 </root>

@@ -5,8 +5,9 @@ import {Router} from '@angular/router';
   providedIn: 'root'
 })
 export class ShopsmanagerService {
-  private selectedShopId: number;
+  public selectedShopId: number;
   constructor(private router: Router) {
+    this.selectedShopId = 0;
   }
 }
 

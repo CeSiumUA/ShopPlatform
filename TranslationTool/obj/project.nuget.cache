@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "IJ59rDNnB/ElvKfD1rnWu/An+RYuLH2ex37OR+aupe8zsN9rPs1CRozfNDRPt9WIi+E6IRTrJZbG6ytyB0J9rg==",
+  "dgSpecHash": "BfdaZ1PDKhYe5ahtJDda4NcZhE6jMFa2aQgAwDTHq53//Z6xfSQgxLu70F0albbJLPW4nPgKVXqj+5WT4lqDKw==",
   "success": true,
-  "projectFilePath": "F:\\FreelanceWork\\ShopPlatform\\TranslationTool\\TranslationTool.csproj",
+  "projectFilePath": "/home/fedir/Projects/ShopPlatform/TranslationTool/TranslationTool.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\mtgin\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+    "/home/fedir/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512",
+    "/home/fedir/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.8/microsoft.aspnetcore.app.ref.3.1.8.nupkg.sha512"
   ],
   "logs": []
 }

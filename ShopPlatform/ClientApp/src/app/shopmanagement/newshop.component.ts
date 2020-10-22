@@ -15,7 +15,7 @@ import {Router} from '@angular/router';
           <input type="text" class="form-control" id="firstName" placeholder="" [(ngModel)]="shopName" required>
         </div>
         <div class="mb-3">
-          <label for="username">Username</label>
+          <label for="username" i18n="DescriptionLabel">Description</label>
           <textarea class="form-control" rows="3" [(ngModel)]="shopDescription"></textarea>
         </div>
         <div class="mb-3">
@@ -330,7 +330,7 @@ export class NewshopComponent implements OnInit{
     this.readyToPush = false;
     const formData = new FormData();
     formData.append('icon', file[0]);
-    this.httpClient.post('api/shop/uploadicon', formData).subscribe((data: any) => {
+    this.httpClient.post('/cdn/files/uploadicon', formData).subscribe((data: any) => {
       this.uploadedFileId = data.payload;
       this.readyToPush = true;
     });

@@ -26,19 +26,6 @@ namespace ShopPlatform.API.Controllers
             this.hostingEnvironment = hostingEnvironment;
             this._DatabaseContext = databaseContext;
         }
-
-        [HttpPost("uploadicon")]
-        public async Task<IActionResult> UploadFile()
-        {
-            string dir = Directory.CreateDirectory($"{hostingEnvironment.WebRootPath}/FilesUploads").FullName;
-            string iconName = Guid.NewGuid().ToString().Replace("-", string.Empty);
-            var file = Request.Form.Files[0];
-            using (FileStream fs = new FileStream($"{dir}/{iconName}", FileMode.Create))
-            {
-                await file.CopyToAsync(fs);
-            }
-            return new JsonResult(new ServerResponse<string>(iconName));
-        }
         [HttpPost("createshop")]
         public async Task<IActionResult> CreateShop([FromBody]Shop newShop)
         {

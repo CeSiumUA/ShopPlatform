@@ -15,13 +15,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {NewshopComponent} from './shopmanagement/newshop.component';
 import {HomeComponent} from './home.component';
 import {NewitemComponent} from './shopmanagement/newitem.component';
+import {ShopselectorComponent} from "./shopmanagement/shopselector.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'myshop', component: ShopComponent, canActivate: [AuthGuard]},
-  {path: 'newshop', component: NewshopComponent, canActivate: [AuthGuard]}
+  {path: 'newshop', component: NewshopComponent, canActivate: [AuthGuard]},
+  {path: 'shops/:id', component: ShopselectorComponent, canActivate: [AuthGuard]},
+  {path: 'newitem', component: NewitemComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({
@@ -33,7 +36,8 @@ const routes: Routes = [
     ShopComponent,
     NewshopComponent,
     HomeComponent,
-    NewitemComponent
+    NewitemComponent,
+    ShopselectorComponent
   ],
   imports: [
     BrowserModule,
