@@ -21,6 +21,7 @@ namespace ShopPlatform.Models
         public DbSet<Item> Items { get; set; }
         public DbSet<Location> Locations { get; set; }
         public DbSet<ItemIcon> ItemIcons { get; set; }
+        public DbSet<ShopIcon> ShopsIcons { get; set; }
         public DatabaseContext(DbContextOptions options) : base(options)
         {
             Database.EnsureCreated();

@@ -8,6 +8,7 @@ namespace ShopPlatform.Models
         [Key]
         public Guid Id { get; set; }
         public string Path { get; set; }
+        public DateTime DateAdded { get; set; }
         public T Reference { get; set; }
     }
 }

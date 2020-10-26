@@ -31,35 +31,37 @@ namespace ShopPlatform.API.Controllers
         {
             var shop = await _DatabaseContext.Shops.Include(x => x.ShopOwner).Where(x => x.ShopOwner.Email == User.Identity.Name)
                 .SingleOrDefaultAsync();
-            var files = Request.Form.Files;
-            string dir = Directory.CreateDirectory($"{hostingEnvironment.WebRootPath}/FilesUploads").FullName;
-            string headerFileName = Guid.NewGuid().ToString().Replace("-", string.Empty);
-            newItem.PhotoUrl = headerFileName;
-            using (FileStream fs = new FileStream($"{dir}/{headerFileName}", FileMode.Create))
+            if (shop == null)
             {
-                await files[0].CopyToAsync(fs);
+                return Unauthorized();
             }
-            foreach (var file in files.Skip(1))
-            {
-                
-            }
+
+            newItem.ViewId = Guid.NewGuid().ToString().Replace("-", string.Empty);
             newItem.Seller = shop;
             await _DatabaseContext.Items.AddAsync(newItem);
+            await _DatabaseContext.SaveChangesAsync();
+            foreach (var imgRef in newItem.Images)
+            {
+                var icon = await this._DatabaseContext.ItemIcons.SingleOrDefaultAsync(x => x.Path == imgRef);
+                icon.Reference = newItem;
+                this._DatabaseContext.ItemIcons.Update(icon);
+            }
             await _DatabaseContext.SaveChangesAsync();
             return new JsonResult(new ServerResponse<string>("Succeeded!"));
         }
         [HttpGet("top")]
         public async Task<IActionResult> GetTopItems()
         {
-            var topItems = await _DatabaseContext.Items.OrderBy(x => x.Rating).Take(6).ToListAsync();
+            var topItems = await _DatabaseContext.Items.Include(x => x.Seller).OrderBy(x => x.Rating).Take(6).ToListAsync();
             return new JsonResult(new ServerResponse<List<Item>>(topItems));
         }
-        [HttpPost("additem")]
-        public async Task<IActionResult> AddItem([FromBody] Item item)
+        [HttpGet("{id?}")]
+        public async Task<IActionResult> GetItem(string id)
         {
-            await _DatabaseContext.Items.AddAsync(item);
-            await _DatabaseContext.SaveChangesAsync();
-            return new JsonResult(new ServerResponse<string>("Succeed!"));
+            var item = await _DatabaseContext.Items.Include(x => x.Seller).SingleOrDefaultAsync(x => x.ViewId == id);
+            item.Images = await _DatabaseContext.ItemIcons.Include(x => x.Reference).Where(x => x.Reference.Id == item.Id)
+                .Select(x => x.Path).ToListAsync();
+            return new JsonResult(new ServerResponse<Item>(item));
         }
     }
 }

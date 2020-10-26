@@ -9,5 +9,6 @@ namespace ShopPlatform.Models.Items
         public Guid Id { get; set; }
         public string Path { get; set; }
         public Item Reference { get; set; }
+        public DateTime DateAdded { get; set; }
     }
 }

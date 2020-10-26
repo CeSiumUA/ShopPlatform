@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {computeStartOfLinePositions} from '@angular/compiler-cli/src/ngtsc/sourcemaps/src/source_file';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
+import {FileRef, FiletransferService} from "../http/filetransfer.service";
 
 @Component({
   selector: 'app-newshop',
@@ -315,7 +315,7 @@ export class NewshopComponent implements OnInit{
   public shopAddress: string;
   public uploadedFileId: any;
   private readyToPush = true;
-  constructor(private httpClient: HttpClient, private router: Router) {
+  constructor(private httpClient: HttpClient, private router: Router, private fileTransfer: FiletransferService) {
   }
   loadCities(event: any): void{
     if (event.length >= 2 && this.selectedCountry != null)
@@ -326,12 +326,16 @@ export class NewshopComponent implements OnInit{
         });
     }
   }
-  upload(file: any): void{
+  upload(files: any): void{
     this.readyToPush = false;
-    const formData = new FormData();
-    formData.append('icon', file[0]);
-    this.httpClient.post('/cdn/files/uploadicon', formData).subscribe((data: any) => {
+    /*const formData = new FormData();
+    formData.append('icon', files[0]);
+    this.httpClient.post('/cdn/files/shops/uploadicon', formData).subscribe((data: any) => {
       this.uploadedFileId = data.payload;
+      this.readyToPush = true;
+    });*/
+    this.fileTransfer.uploadFiles(files, FileRef.Shop).subscribe((data) =>{
+      this.uploadedFileId = data.payload[0];
       this.readyToPush = true;
     });
   }

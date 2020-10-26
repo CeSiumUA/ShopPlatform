@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import {LoginComponent} from './authentication/login/login.component';
 import {RouterModule, Routes} from '@angular/router';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {httpInterceptorsProviders} from './http/interceptors';
 import {EnumToArrayPipe, RegisterComponent} from './authentication/register/register.component';
 import {ShopComponent} from './shopmanagement/shop.component';
@@ -17,9 +17,12 @@ import {HomeComponent} from './home.component';
 import {NewitemComponent} from './shopmanagement/newitem.component';
 import {ShopselectorComponent} from "./shopmanagement/shopselector.component";
 import {AuthenticationService} from "./authentication/authentication.service";
+import {ToastscontainerComponent} from "./utils/toast/toastscontainer.component";
+import {ItemviewComponent} from "./shopmanagement/itemview.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
+  {path: 'items/:id', component: ItemviewComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'myshop', component: ShopComponent, canActivate: [AuthGuard]},
@@ -38,7 +41,9 @@ const routes: Routes = [
     NewshopComponent,
     HomeComponent,
     NewitemComponent,
-    ShopselectorComponent
+    ShopselectorComponent,
+    ToastscontainerComponent,
+    ItemviewComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +51,8 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes),
     FormsModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
   providers: [
     HttpClient,

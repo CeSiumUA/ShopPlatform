@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-shop',
@@ -53,7 +54,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class ShopComponent implements OnInit{
   public shops: any;
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient, private router: Router) {
   }
   ngOnInit(): void {
     this.httpClient.get('api/shop/myshops').subscribe((data: any) => {
@@ -61,7 +62,7 @@ export class ShopComponent implements OnInit{
         this.shops = data.payload;
       }
       else{
-
+        this.router.navigateByUrl('/');
       }
     });
   }

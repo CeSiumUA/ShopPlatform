@@ -60,6 +60,7 @@ namespace ShopPlatform.API.Controllers
             var shop = _DatabaseContext.Shops.Include(x => x.ShopOwner).SingleOrDefault(x => x.Id == shopId);
             if (shop.OwnerReference.email != User.Identity.Name)
             {
+                return Unauthorized();
                 return new JsonResult(new ServerResponse<object>(new ServerError(ServerError.AccessDenied)));
             }
             return new JsonResult(new ServerResponse<Shop>(shop));
@@ -74,6 +75,8 @@ namespace ShopPlatform.API.Controllers
                 var myshops = _DatabaseContext.Shops.Include(x => x.ShopOwner).Where(x => x.ShopOwner.Id == account.Id);
                 return new JsonResult(new ServerResponse<IQueryable<Shop>>(myshops));
             }
+
+            return Unauthorized();
             return new JsonResult(new ServerResponse<object>(new ServerError(ServerError.UserNotFound)));
         }
         [HttpGet("shops/{searchPattern}")]
