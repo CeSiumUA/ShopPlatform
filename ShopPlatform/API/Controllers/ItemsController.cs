@@ -14,7 +14,6 @@ using ShopPlatform.Models.Items;
 
 namespace ShopPlatform.API.Controllers
 {
-    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ItemsController : ControllerBase
@@ -26,6 +25,7 @@ namespace ShopPlatform.API.Controllers
             this._DatabaseContext = databaseContext;
             this.hostingEnvironment = hostingEnvironment;
         }
+        [Authorize]
         [HttpPost("additem"), DisableRequestSizeLimit]
         public async Task<IActionResult> CreateNewItem([FromBody] Item newItem)
         {
@@ -49,6 +49,7 @@ namespace ShopPlatform.API.Controllers
             await _DatabaseContext.SaveChangesAsync();
             return new JsonResult(new ServerResponse<string>("Succeeded!"));
         }
+        
         [HttpGet("top")]
         public async Task<IActionResult> GetTopItems()
         {

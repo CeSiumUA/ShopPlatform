@@ -1,0 +1,16 @@
+﻿<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Publish ShopPlatform to folder (1)" type="DotNetFolderPublish" factoryName="Publish to folder">
+    <riderPublish runtime="Portable" target_folder="A:\Projects\ShopPlatform\ShopPlatform\Publish" target_framework="netcoreapp3.1" uuid_high="-2205686207877787979" uuid_low="-8418052463134410886" />
+    <method v="2">
+      <option name="NpmBeforeRunTask" enabled="true">
+        <package-json value="$PROJECT_DIR$/ShopPlatform/ClientApp/package.json" />
+        <command value="run" />
+        <scripts>
+          <script value="build-locale" />
+        </scripts>
+        <node-interpreter value="project" />
+        <envs />
+      </option>
+    </method>
+  </configuration>
+</component>
